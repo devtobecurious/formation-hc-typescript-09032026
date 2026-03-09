@@ -16,6 +16,10 @@ export class Cell {
         this._character = value;
     }
 
+    get character(): Character | undefined {
+        return this._character;
+    }
+
     get position(): [number, number] {
         return [this._i, this._j];
     }
