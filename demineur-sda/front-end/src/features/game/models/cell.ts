@@ -1,5 +1,19 @@
+import type Character from "./character";
+
 export class Cell {
+    private _character : Character | undefined;
+
     constructor(private _i: number, private _j: number) {
+    }
+
+    move(): void {
+        if(this.character) {
+
+        }
+    }
+
+    set character(value: Character) {
+        this._character = value;
     }
 
     get position(): [number, number] {
