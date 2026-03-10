@@ -1,5 +1,7 @@
 import { Cell } from "./cell";
 
+export type DisplayCell = (cell: Cell) => void;
+
 /**
  * Represents the grid of the game, which is a 2D array of cells.
  */
@@ -8,6 +10,15 @@ export class Grid {
 
     constructor(width: number, height: number) {
         this.prepareCells(width, height);
+    }
+
+    display(cellDisplay: DisplayCell): void {
+        for(const row of this.cells) {
+            for(const cell of row) {
+                cellDisplay(cell);
+            }
+        }
+
     }
 
     private prepareCells(width: number, height: number): void {
